@@ -1,4 +1,4 @@
-# Nodepay Autoreferral
+# Nodepay Autoreferral v1.0
 Automatic referral script for Nodepay Account using captcha solver and proxies.
 ### Tools and components required
 1. Nodepay Account | Register: [https://app.nodepay.ai/register](https://app.nodepay.ai/register?ref=ZUCBuJaIoBXLE6J)
