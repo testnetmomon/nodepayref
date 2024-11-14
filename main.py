@@ -15,7 +15,7 @@ init(autoreset=True)
 
 def print_banner():
     print(f"\n{Fore.CYAN}{'='*45}")
-    print(f"{Fore.YELLOW}       Nodepay Auto Referral Bot")
+    print(f"{Fore.YELLOW}       Nodepay Auto Referral Bot v1.0")
     print(f"{Fore.YELLOW}       github.com/im-hanzou")
     print(f"{Fore.YELLOW}       do with your own risk")
     print(f"{Fore.CYAN}{'='*45}\n")
@@ -277,7 +277,7 @@ class ReferralClient:
                     "email": email,
                     "password": password,
                     "referral_code": ref_code,
-                    "message": register_response.get('msg', 'Success'),
+                    "token": access_token,
                     "activation_status": activation_response.get('success', False),
                     "activation_message": activation_response.get('msg', 'Unknown')
                 }
@@ -342,6 +342,8 @@ async def main():
             print(f"{Fore.CYAN}Username: {Fore.WHITE}{result['username']}")
             print(f"{Fore.CYAN}Email: {Fore.WHITE}{result['email']}")
             print(f"{Fore.CYAN}Password: {Fore.WHITE}{result['password']}")
+            print(f"{Fore.CYAN}Referred to: {Fore.WHITE}{result['referral_code']}")
+            print(f"{Fore.CYAN}Token: {Fore.WHITE}{result['token']}")
             successful_referrals.append(result)
             
             with open('accounts.txt', 'a') as f:
@@ -349,7 +351,7 @@ async def main():
                 f.write(f"Password: {result['password']}\n")
                 f.write(f"Username: {result['username']}\n")
                 f.write(f"Referred to: {result['referral_code']}\n")
-                f.write(f"Message: {result['message']}\n")
+                f.write(f"Token: {result['token']}\n")
                 f.write(f"Date: {datetime.now().strftime('%Y-%m-%d %H:%M:%S')}\n")
                 f.write("-" * 50 + "\n")
         
