@@ -15,7 +15,7 @@ init(autoreset=True)
 
 def print_banner():
     print(f"\n{Fore.CYAN}{'='*45}")
-    print(f"{Fore.YELLOW}       Nodepay Auto Referral Bot v1.0")
+    print(f"{Fore.YELLOW}       Nodepay Auto Referral Bot")
     print(f"{Fore.YELLOW}       github.com/im-hanzou")
     print(f"{Fore.YELLOW}       do with your own risk")
     print(f"{Fore.CYAN}{'='*45}\n")
