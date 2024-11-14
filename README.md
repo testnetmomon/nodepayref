@@ -35,7 +35,7 @@ python3 main.py
 - Enter how many referrals you want, more referrals will result in more use of your captcha solver api credits
 - Select your captcha solver service (Make sure you have credits, you can topup first)
 - Select proxy usage yes or no
-- Result account generated will be saved to accounts.txt
+- Result account generated will be saved to ``accounts.txt``
 # Notes
 - Run this bot, and it will update your referrer code to my invite code if you don't have one.
 - This bot have delays for sending Reports to Nodepay server to avoid rate limiting.
