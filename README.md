@@ -31,7 +31,7 @@ python main.py
 ```bash
 python3 main.py
 ```
-- Insert your referral code, example: ``https://app.nodepay.ai/register?ref=XXXXX`` this is your code > ``XXXXX``
+- Insert your referral code, example: ``https://app.nodepay.ai/register?ref=XXXXXXXXXX`` this is your code: ``XXXXXXXXXX``
 - Enter how many referrals you want, more referrals will result in more use of your captcha solver api credits
 - Select your captcha solver service (Make sure you have credits, you can topup first)
 - Select proxy usage yes or no
