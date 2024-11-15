@@ -43,5 +43,5 @@ python3 main.py
 - Result account generated will be saved to ``accounts.txt``
 # Notes
 - Run this bot, and it will update your referrer code to my invite code if you don't have one.
-- This bot have delays for sending Reports to Nodepay server to avoid rate limiting.
+- This bot have delays for sending request to Nodepay API server to avoid rate limiting.
 - You can just run this bot at your own risk, I'm not responsible for any loss or damage caused by this bot. This bot is for educational purposes only.
