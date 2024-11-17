@@ -171,9 +171,6 @@ class ReferralClient:
                 if attempt == self.max_retries:
                     log_step(f"Failed to get captcha after {self.max_retries} attempts", "error")
                     raise
-                delay = random.uniform(3, 7)
-                log_step(f"Retrying captcha in {delay:.2f} seconds...", "info")
-                await asyncio.sleep(delay)
         return None
 
     async def _register_with_retry(self, register_data: dict) -> Optional[dict]:
@@ -189,18 +186,11 @@ class ReferralClient:
                 log_step(f"Registration failed on attempt {attempt}: {response.get('msg', 'Unknown error')}", "error")
                 if attempt == self.max_retries:
                     return None
-                    
-                delay = random.uniform(3, 7)
-                log_step(f"Retrying registration in {delay:.2f} seconds...", "info")
-                await asyncio.sleep(delay)
                 
             except Exception as e:
                 log_step(f"Registration error on attempt {attempt}: {str(e)}", "error")
                 if attempt == self.max_retries:
                     return None
-                delay = random.uniform(3, 7)
-                log_step(f"Retrying registration in {delay:.2f} seconds...", "info")
-                await asyncio.sleep(delay)
         return None
         
     def _start_new_proxy_session(self):
@@ -313,18 +303,11 @@ class ReferralClient:
                 
                 if attempt == self.max_retries:
                     return None
-                    
-                delay = random.uniform(3, 7)
-                log_step(f"Retrying login in {delay:.2f} seconds...", "info")
-                await asyncio.sleep(delay)
                 
             except Exception as e:
                 log_step(f"Login error on attempt {attempt}: {str(e)}", "error")
                 if attempt == self.max_retries:
                     return None
-                delay = random.uniform(3, 7)
-                log_step(f"Retrying login in {delay:.2f} seconds...", "info")
-                await asyncio.sleep(delay)
         return None
 
     async def activate_account(self, access_token: str) -> Optional[dict]:
@@ -345,18 +328,11 @@ class ReferralClient:
                 log_step(f"Activation failed on attempt {attempt}: {response.get('msg', 'Unknown error')}", "error")
                 if attempt == self.max_retries:
                     return None
-                    
-                delay = random.uniform(3, 7)
-                log_step(f"Retrying activation in {delay:.2f} seconds...", "info")
-                await asyncio.sleep(delay)
 
             except Exception as e:
                 log_step(f"Activation error on attempt {attempt}: {str(e)}", "error")
                 if attempt == self.max_retries:
                     return None
-                delay = random.uniform(3, 7)
-                log_step(f"Retrying activation in {delay:.2f} seconds...", "info")
-                await asyncio.sleep(delay)
         return None
         
     async def process_referral(self, ref_code: str, captcha_service) -> Optional[Dict]:
@@ -364,7 +340,6 @@ class ReferralClient:
             try:
                 log_step(f"\nStarting referral process (attempt {attempt}/{self.max_retries})...", "info")
                 self._start_new_proxy_session()
-                
                 username, email, password = self._generate_credentials()
                 log_step(f"Generated credentials for: {email}", "info")
                 
@@ -411,10 +386,6 @@ class ReferralClient:
                 if attempt == self.max_retries:
                     log_step(f"Referral process failed after {self.max_retries} attempts", "error")
                     return None
-                
-                delay = random.uniform(3, 7)
-                log_step(f"Retrying entire referral process in {delay:.2f} seconds...", "info")
-                await asyncio.sleep(delay)
         
         return None
 
@@ -485,11 +456,8 @@ async def main():
                 f.write(f"IP Used: {result['ip_used']}\n")
                 f.write(f"Date: {datetime.now().strftime('%Y-%m-%d %H:%M:%S')}\n")
                 f.write("-" * 50 + "\n")
-        
-        if i < num_referrals - 1:
-            delay = random.uniform(2, 5)
-            log_step(f"Waiting {delay:.2f} seconds...", "info")
-            time.sleep(delay)
+            with open('tokens.txt', 'a') as f:
+                f.write(f"{result['token']}\n")
 
     print(f"\n{Fore.CYAN}{'='*45}")
     log_step("Summary:", "info")
