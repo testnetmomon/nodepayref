@@ -1,3 +1,10 @@
-#Just example, please delete!
-http://proxyhost:port
-http://user:pass@proxyhost:port
+http://xywhuvaw:privqjpffqcy@198.23.239.134:6540
+http://xywhuvaw:privqjpffqcy@207.244.217.165:6712
+http://xywhuvaw:privqjpffqcy@107.172.163.27:6543
+http://xywhuvaw:privqjpffqcy@64.137.42.112:5157
+http://xywhuvaw:privqjpffqcy@173.211.0.148:6641
+http://xywhuvaw:privqjpffqcy@161.123.152.115:6360
+http://xywhuvaw:privqjpffqcy@167.160.180.203:6754
+http://xywhuvaw:privqjpffqcy@154.36.110.199:6853
+http://xywhuvaw:privqjpffqcy@173.0.9.70:5653
+http://xywhuvaw:privqjpffqcy@173.0.9.209:5792
